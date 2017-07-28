@@ -54,15 +54,16 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
              // console.log(json.apps);
 
              statJSONEntries.push(json);
-            //  console.log(statJSONEntries);
+             console.log(json);
             }
          })
        }
-     // for loop needs async solution, but this will do for now to ensure results print
-     setTimeout(function(){
-      console.log(statJSONEntries);
-
-      },13000);
+     // for loop still needs async solution, but this will do for now to ensure results print
+    //  setTimeout(function(){
+    //   console.log("in case printing one by one takes too long, here is the array of objects so far");
+    //   console.log(statJSONEntries);
+    //
+    // },90000);
 
 });
 
