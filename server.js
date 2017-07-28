@@ -23,39 +23,39 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
       }
     })
 
-    // function round_two(results) {
+
    // begin second round of ajax calls
-   for (t = 100; t < timestamps.length; t++) {
+    for (t = 100; t < timestamps.length; t++) {
 
-    urlTwo = 'http://web.archive.org/web/20160826105704/https://www.coinbase.com/about';
+      urlTwo = 'http://web.archive.org/web/' + timestamps[t] + '/https://www.coinbase.com/about';
 
-    request(urlTwo, function(error, response, html) {
-       if(!error){
-         // load new dom with cheerio
-         var $ = cheerio.load(html);
+      request(urlTwo, function(error, response, html) {
+         if(!error){
+           // load new dom with cheerio
+           var $ = cheerio.load(html);
 
-           var json = { users : "", wallets : "", merchants : "", apps : ""};
+             var json = { users : "", wallets : "", merchants : "", apps : ""};
 
-           var userRaw = $( "#stats h4" ).first().text().trim();
-             // the regex removes unwanted text
-             json.users = userRaw.replace(/\D/g,'');
-             // console.log(json.users);
+             var userRaw = $( "#stats h4" ).first().text().trim();
+               // the regex removes unwanted text
+               json.users = userRaw.replace(/\D/g,'');
+               // console.log(json.users);
 
-           var walletsRaw  = $("#stats :nth-child(3)" ).text().trim();
-             json.wallets = walletsRaw.replace(/\D/g,'');
-             // console.log(json.wallets);
+             var walletsRaw  = $("#stats :nth-child(3)" ).text().trim();
+               json.wallets = walletsRaw.replace(/\D/g,'');
+               // console.log(json.wallets);
 
-           var merchantsRaw = $("#stats :nth-child(4)" ).text().trim();
-             json.merchants = merchantsRaw.replace(/\D/g,'');
-             // console.log(json.merchants);
+             var merchantsRaw = $("#stats :nth-child(4)" ).text().trim();
+               json.merchants = merchantsRaw.replace(/\D/g,'');
+               // console.log(json.merchants);
 
-           var appsRaw = $( "#stats h4").last().text().trim();
-             json.apps = appsRaw.replace(/\D/g,'');
-             // console.log(json.apps);
+             var appsRaw = $( "#stats h4").last().text().trim();
+               json.apps = appsRaw.replace(/\D/g,'');
+               // console.log(json.apps);
 
-             statJSONEntries.push(json);
-             console.log(statJSONEntries);
-             }
+               statJSONEntries.push(json);
+               console.log(statJSONEntries);
+              }
            })
          }
 
