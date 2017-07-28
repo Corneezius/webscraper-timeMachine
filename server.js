@@ -23,6 +23,10 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
       }
     })
 
+    // function round_two(results) {
+   // begin second round of ajax calls
+   for (t = 100; t < timestamps.length; t++) {
+
     urlTwo = 'http://web.archive.org/web/20160826105704/https://www.coinbase.com/about';
 
     request(urlTwo, function(error, response, html) {
@@ -53,6 +57,7 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
              console.log(statJSONEntries);
              }
            })
+         }
 
 });
 
