@@ -61,6 +61,7 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
      // for loop still needs async solution, but this will do for now to ensure results print
     //  setTimeout(function(){
     //   console.log("in case printing one by one takes too long, here is the array of objects so far");
+    //   console.log("if this is empty, have no fear. the results will drip in one by one..");
     //   console.log(statJSONEntries);
     //
     // },90000);
