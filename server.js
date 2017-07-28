@@ -69,7 +69,7 @@ url = 'http://web.archive.org/web/timemap/json/http://www.coinbase.com/about';
     // fs.writeFile('output.json', JSON.stringify(json, null, 4), function(err){
     // console.log('File successfully written! - Check your project directory for the output.json file');
 
-})
+// })
 
 });
 
